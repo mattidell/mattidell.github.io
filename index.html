@@ -1,452 +1,376 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Resume / Matt Idell</title>
-        
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+        <meta charset="UTF--8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         
         <style type="text/css">
+            /* --- General Styles & Resets --- */
+            :root {
+                --primary-color: #2c3e50; /* Dark Blue */
+                --secondary-color: #3498db; /* Bright Blue */
+                --light-gray: #ecf0f1;
+                --text-color: #34495e; /* Dark Gray */
+                --page-bg: #f4f4f4;
+            }
+
             body {
-                background-color: #c3dcff;
+                background-color: var(--page-bg);
                 font-family: 'Open Sans', Arial, sans-serif;
                 font-size: 16px;
-                line-height: 1.5em;
-                padding: 0em;
-                margin: 0em;
-            }
-            
-            body.withgrid {
-                background-image: url('gridbg-24.gif');
+                line-height: 1.6;
+                color: var(--text-color);
+                padding: 2em;
+                margin: 0;
             }
             
             p {
-                font-size: 1em;
-                line-height: 1.5em;
-                margin: 0 0 1.5em 0;
+                margin: 0 0 1em 0;
+            }
+
+            h1, h2 {
+                font-weight: 600;
+                color: var(--primary-color);
+                margin: 0;
             }
             
             h1 {
-                font-size: 2em;
-                line-height: 1.5em;
-                margin: 0.75em 0 0 0;
-                
-                font-size: 2.5em; /* 40px */
-                line-height: 1.2em; /* 48px */
-                margin-top: 0.6em;  
-                margin-bottom: 0em;
-  
-                float: left; 
-                
-                text-transform: uppercase;
-                text-shadow: 1px 1px 1px #aaa;
-                font-weight: normal;
-                
+                font-size: 2.8rem;
+                line-height: 1.2;
             }
             
             h2 {
-                font-size: 1.25em;
-                line-height: 1.2em;
-                margin-top: 1.2em;  
-                margin-bottom: 0em;
+                font-size: 1.5rem;
                 text-transform: uppercase;
-                font-weight: bold;
+                letter-spacing: 1px;
+                padding-bottom: 0.5em;
+                border-bottom: 2px solid var(--secondary-color);
+                margin-bottom: 1em;
+                margin-top: 2em;
             }
-            
-            header {
+
+            ul {
+                padding-left: 20px;
+            }
+
+            /* --- Main Container --- */
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background-color: #fff;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                border-radius: 8px;
                 overflow: hidden;
-            }
-            #divider {
-                color: #000;
-                text-shadow:  3px 0px 0px #000;
-            }
-            aside {
-                font-size: 0.8750em;
-                line-height: 1.7143em; /* 24px */
-                margin: 1.7143em 2em 0;  
-                display: block;
-                font-style: italic;
             }
             
             .hresume {
-                padding-left: 20px;
-                padding-right: 20px;
-                
-                border-left: solid 1px #AAA;
-                border-right: solid 1px #AAA;
+                padding: 2.5em 3em;
             }
-            
-            .basic .hresume {
-                background-color: #FFF;
-            }
-            
-            .withgrid .hresume {
-                background-color: transparent;
-            }
-            
-            .container {
-                border-left: solid 2px #AAA;
-                border-right: solid 2px #AAA;
-                padding: 1px;
-                width: auto;
-                height: 100%;
-                width: 800px;
-                margin: 0em auto;
-            }
-            
-            .basic .container {
-                background-color: #FFF;
-            }
-    
-            .withgrid .container {
-                background-color: transparent;
+
+            /* --- Header & Contact --- */
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--light-gray);
+                padding-bottom: 1.5em;
+                margin-bottom: 1.5em;
             }
             
             .contact-details {
-                float: right;
-                font-size: 1.25em; /* 20px */
-                line-height: 1.2em; /* 24px */
-                margin-top: 1.2em;  
-                margin-bottom: 0em;
+                text-align: right;
+                font-size: 0.95rem;
             }
-            
-            .experience-list {
-                padding: 0em;
-                margin: 0em;
-            }
-            .experience-item {
-                list-style-type: none;
-                margin: 0 0 24px 0;                
-            }
-            
-            .title, .dates {
-                font-weight: bold;                
-            }            
-            
-            .company, .location {
-                float: right;
-                font-style: italic;
-            }
-           
-           .tasks {
-                list-style-type: disc;
-           }
-           
-           .city, .email, .phone {
+
+            .contact-details span {
                 display: block;
-           }
-           .skills-list {
-                margin: 0em;
-                padding: 0em 0em 1em;
+                margin-bottom: 0.25em;
             }
             
-           .skills-list {
+            .contact-details i {
+                margin-left: 8px;
+                color: var(--secondary-color);
+            }
+
+            /* --- Sections --- */
+            aside {
+                font-style: italic;
+                color: #555;
+                background-color: #f8f9fa;
+                padding: 1em;
+                border-left: 4px solid var(--secondary-color);
+                margin: 2em 0;
+                border-radius: 4px;
+            }
+           
+           /* --- Experience Section --- */
+            .experience-list {
+                padding: 0;
+                margin: 0;
                 list-style-type: none;
-           }
-           .skills-list li {
-                display: inline;                
-           }
-           .skills-list li:after {
-                content: ",";
-           }
-           .skills-list li:last-child:after {
-                content: "";
-           }
-           </style>
+            }
+
+            .experience-item {
+                margin-bottom: 2em;
+            }
+
+            .experience-item > div:first-child,
+            .experience-item > div:nth-child(2) {
+                 display: flex;
+                 justify-content: space-between;
+                 flex-wrap: wrap;
+                 margin-bottom: 0.25em;
+            }
+            
+            .title {
+                font-weight: 700;
+                font-size: 1.1rem;
+                color: var(--primary-color);
+            }
+
+            .company, .location, .dates {
+                font-style: italic;
+                color: #555;
+            }
+
+            .dates {
+                font-weight: 600;
+            }
            
-           <style type="text/css">
+            .tasks {
+                margin-top: 0.5em;
+            }
+
+            .tasks li {
+                margin-bottom: 0.5em;
+            }
            
-            @media print, (max-width: 500px) {
-                html,
+           /* --- Skills Section --- */
+            .skills-list {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5em;
+            }
+
+            .skills-list li {
+                background-color: var(--light-gray);
+                color: var(--primary-color);
+                padding: 0.4em 0.8em;
+                border-radius: 15px;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+           
+            /* --- Responsive & Print Styles --- */
+            @media (max-width: 768px) {
                 body {
-                    border: none;
                     padding: 0;
-                    margin: 0;
-                    background-color: #fff;
+                }
+                .hresume {
+                    padding: 1.5em;
+                }
+                header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1em;
+                }
+                .contact-details {
+                    text-align: left;
+                }
+                .contact-details span {
+                    display: inline-block;
+                    margin-right: 1em;
+                }
+                 .contact-details i {
+                    margin-right: 5px;
+                    margin-left: 0;
                 }
             }
 
             @media print {
-                html,
-                body,
-                h1,
-                h2 {
+                body, .container {
                     background-color: #fff;
-                    color: #000;
-                }
-                body {
-                    font-family: Georgia, serif; 
+                    box-shadow: none;
+                    margin: 0;
+                    padding: 0;
                 }
                 .container {
-                    width: auto;
-                }
-                .container, .hresume {
-                    border-width: 0px;
+                    border: none;
                 }
                 aside {
                     display: none;
                 }
-				h2 {
-					margin-top: 0px;
-				}
-				.hresume > header {
-					margin-bottom: 1.2em;
-				}
-            }
-        </style>
-        
-        <script type="text/javascript">
-        function adjustDivider() {
-            var dividerEl = document.getElementById("divider");
-            var containerEl = dividerEl.parentElement;
-            
-            var containerWidth = containerEl.offsetWidth;
-            
-            var widthTooLong = dividerEl.offsetWidth > containerWidth;
-            
-            var endCondition = false;
-            var dividerText = dividerEl.innerHTML;
-            
-            while(!endCondition) {
-                if (widthTooLong) {
-                    dividerText = dividerEl.innerHTML;
-                    dividerEl.innerHTML = dividerText.substring(0, dividerText.length - 1);
-                    widthTooLong = dividerEl.offsetWidth > containerWidth;
-                    if (!widthTooLong) {
-                        endCondition = true; // end when we are one character less than over the container width
-                    }
-                } else {
-                    dividerText = dividerEl.innerHTML;
-                    dividerEl.innerHTML = dividerText + "\\";
-                    widthTooLong = dividerEl.offsetWidth > containerWidth;
+                h2 {
+                    border-bottom: 2px solid #000;
+                }
+                .skills-list li {
+                    background-color: #eee;
+                    border: 1px solid #ccc;
                 }
             }
-        }
-        
-        </script>
+        </style>
     </head>
-    <body class="basic" onload="adjustDivider()">
+    <body>
         
         <div class="container">
             <div class="hresume">
                 <header>
                     <div class="contact">
                         <h1>Matt Idell</h1>
-                        <div class="contact-details"><span class="email">mattidell@gmail.com</span><span class="city">Santa Monica, CA</span><span class="phone">415-572-6590</span></div>
                     </div>
-                    <span id="divider">\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</span>
+                    <div class="contact-details">
+                        <span class="email">mattidell@gmail.com<i class="fas fa-envelope"></i></span>
+                        <span class="city">Oceanside, CA<i class="fas fa-map-marker-alt"></i></span>
+                        <span class="phone">424-453-4158<i class="fas fa-phone"></i></span>
+                    </div>
                 </header>
                 <section>
-                    <aside>I am a full stack software developer with cloud experience who looks deep into problems, evaluating trade-offs as opposed to following best practices. I add value through practical applications of Agile Development and Continuous Delivery.</aside>
+                    <aside>I am a full stack software engineer with cloud experience who looks deep into problems, evaluating trade-offs as opposed to following best practices and working dilligently with stakeholders to maximize value.</aside>
+                    
                     <article class="objective">
-                        <header><h2>Objective</h2></header>
-                        <section>
-                            <p> 
-                            I seek to build products in a collaborative environment with an emphasis on responsibility and improvement.
-                            </p>
-                        </section>
+                        <h2>Professional Summary</h2>
+                        <p>Principal Software Engineer with over a decade of experience designing and building scalable, full-stack solutions in high-availability cloud environments. Proficient in AWS microservice architecture, backend development with C#/JavaScript and SQL/NoSQL databases, and modern frontend frameworks like React. Proven ability to lead projects, mentor engineers, and drive technical excellence across the entire development lifecycle.</p>
                     </article>
-                     <article class="experience">
-                     <header><h2>Experience</h2></header>   
-                         <section>
-                             <ul class="experience-list">
-                                <li class="experience-item">
-                                    <div>
-                                        <span class="title">Principal Software Engineer</span>
-                                        <span class="company">Cornerstone</span>
-                                    </div>
-                                    <div>
-                                        <span class="dates">Mar 2014 - Present</span>
-                                        <span class="location">Santa Monica, CA</span>
-                                    </div>
-                                    <div>
-                                        <ul class="tasks">
-                                            <li>
-                                                Work with cross functional teams to develop cloud infrastructure solutions for microservice development
-                                            </li>
-                                            <li>
-                                                Built cloud-based Slack integration app to bring Cornerstone Learning to the flow of work
-                                            </li>
-                                            <li>
-                                                Designed and developed features for Cornerstone For Salesforce app on AppExchange, a native to Salesforce Learning Management System with AWS backend
-                                            </li>
-                                            <li>
-                                                Maintain modern UI standards based on various UI paradigms: JavaScript Web Components, AngularJS, React
-                                            </li>
-                                            <li>
-                                                Built variety of API Integrations with Cornerstone, Salesforce, Slack, Microsoft Outlook, GoToTraining, Webex, CyberSource, Google Maps
-                                            </li>
-                                            <li>
-                                                Transitioned CFS product from 11 person offshore team to internal team, including hiring and mentoring team members
-                                            </li>
-                                            <li>
-                                                Established development and release processes, source control with Git, continuous integration and deployment
-                                            </li>
-                                            <li>
-                                                Communicate product design and development conventions through team wiki
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="experience-item">
-                                    <div>
-                                        <span class="title">Software Engineer</span>
-                                        <span class="company">Advisors Asset Management</span>
-                                    </div>
-                                    <div>
-                                        <span class="dates">Mar 2009 - Mar 2014</span>
-                                        <span class="location">San Diego, CA</span>
-                                    </div>
-                                    <div>
-                                        <ul class="tasks">
-                                            <li>
-                                                Feature development of web sites for financial advisors providing commerce, marketing services, single sign-on and cobranding capabilities
-                                            </li>
-                                            <li>
-                                                Lead development of next generation site based on Salesforce platform, integrating with existing systems, practicing test driven development  
-                                            </li>
-                                            <li>
-                                                Integrated web functionality within major retail partner site as seamless client experience
-                                            </li>
-                                            <li>
-                                                Development of application services tier utilizing WCF web services
-                                            </li>
-                                            <li>
-                                                Automated build, deploy, and continuous integration processes for .NET and Salesforce projects
-                                            </li>
-                                            <li>
-                                                Introduced client-side development tools for unit testing, CSS compilation, and functional testing
-                                            </li>
-                                            <li>
-                                                Proactively engaged team to adopt Agile development practices
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="experience-item">
-                                    <div>
-                                        <span class="title">Senior Member, Technical Design Solutions</span>
-                                        <span class="company">Apollo Group</span>                                        
-                                    </div>
-                                    <div>
-                                        <span class="dates">Oct 2007 - Mar 2009</span>
-                                        <span class="company">Aptimus, Inc. (acquired by Apollo Group in Oct 2007)</span>
-                                        
-                                    </div>
-                                    <div>
-                                        <span class="title">&nbsp;</span>
-                                        <span class="location">San Francisco, CA</span>
-                                    </div>
-                                    <div>
-                                        <ul class="tasks">
-                                            <li>
-                                                Managed web production team to implement and support lead generation client/partner accounts
-                                            </li>
-                                            <li>
-                                                Directed and implemented transition of over 100 online marketing campaigns from .NET/SQL Server based platform to XSLT/Java/Oracle based platform 
-                                            </li>                                            
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="experience-item">
-                                    <div>
-                                        <span class="title">Web Developer/Production Team Lead</span>
-                                        <span class="company">Aptimus, Inc.</span>
-                                        
-                                    </div>
-                                    <div>
-                                        <span class="dates">Sep 2005 - Oct 2007</span>
-                                        <span class="company">High Voltage Interactive (acquired by Aptimus, Inc. in Oct 2006)</span>
-                                    </div>
-                                    <div>
-                                        <span class="title">&nbsp;</span>
-                                        <span class="location">San Francisco, CA</span>
-                                    </div>
-                                    <div>
-                                        <ul class="tasks">
-                                            <li>
-                                                Developed flexible and reusable application components of online lead generation and marketing system
-                                            </li>
-                                            <li>
-                                                Restructured data tier with separate transaction/reporting tiers to increase peak traffic capacity
-                                            </li>                                            
-                                            <li>
-                                                Designed primary interface for management and reporting of online marketing campaigns
-                                            </li>
-                                            <li>
-                                                Created marketing portal web site utilizing custom content management components 
-                                            </li>
-                                            <li>
-                                                Promoted by Aptimus to lead team of two developers, a designer and data technician
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="experience-item">
-                                    <div>
-                                        <span class="title">Web Developer</span>
-                                        <span class="company">Fixed Income Securities, LP</span>
-                                    </div>
-                                    <div>
-                                        <span class="dates">Feb 2004 - Sep 2005</span>
-                                        <span class="location">San Diego, CA</span>
-                                    </div>
-                                    <div>
-                                        <ul class="tasks">
-                                            <li>
-                                                Developed page templates, user controls and development model for reporting and administration tools
-                                            </li>
-                                            <li>
-                                                Created complex financial portfolio reports with Active Reports 
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </li>
-                             </ul>
-                         </section>
-                     </article>
-                     <article class="education">
-                        <header><h2>Education</h2></header>   
-                        <section>
-                            <p>
-                                University of California, Berkeley, 2002
-                                <br/>                               
-                                B.S. Engineering Mathematics and Statistics
-                            </p>
-                        </section>
-                     </article>
-                     <article class="skills">
-                        <header><h2>Skills</h2></header>   
-                        <section>
-                            <ul class="skills-list">
-                                <li> AWS</li>
-                                <li> Microservices</li>
-                                <li> Salesforce</li>
-                                <li> C#</li>
-                                <li> SQL</li>
-                                <li> DynamoDB</li>
-                                <li> HTTP</li>
-                                <li> HTML</li>
-                                <li> CSS</li>
-                                <li> JavaScript</li>
-                                <li> Web Components</li>
-                                <li> React</li>
-                                <li> AngularJS</li>
-                                <li> NodeJS</li>
-                                <li> jQuery</li>
-                                <li> Git</li>
-                                <li> Bash</li>
-                                <li> Selenium</li>
-                                <li> Nightwatch</li>
-                                <li> Grunt</li>
-                                <li> Groovy</li>
-                                <li> Jenkins</li>                                
-                            </ul>
-							<p><b>SALESFORCE CERTIFIED - Platform Developer I &amp; II, Platform App Builder</b></p>
-                        </section>
-                     </article>
+                    <article class="experience">
+                        <h2>Experience</h2>   
+                        <ul class="experience-list">
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Senior Principal Software Engineer</span>
+                                    <span class="company">Cornerstone</span>
+                                </div>
+                                <div>
+                                    <span class="dates">Mar 2014 - Present</span>
+                                    <span class="location">Santa Monica (Remote), CA</span>
+                                </div>
+                                <ul class="tasks">
+                                    
+                                    <li>Developed business-critical consumer facing features, contributing to both frontend and backend projects</li>
+                                    <li>Worked with cross functional teams to develop cloud infrastructure solutions for microservice development</li>
+                                    <li>Co-led multiple cloud infrastructure migrations of acquisition products, writing design documents and onboarding teams</li>
+                                    <li>Developed event-driven process to process media files with MediaConvert, EventBridge, SQS and SNS</li>
+                                    <li>Built Data Warehouse API integrations in Salesforce and Slack with OData</li>
+                                    <li>Served as a technical advisor on customer calls, providing engineering insights that helped align product capabilities with client expectations.</li>
+                                    <li>Transitioned CFS product from 11 person offshore team to internal team, including hiring and mentoring team members</li>
+                                </ul>
+                            </li>
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Senior Software Developer</span>
+                                    <span class="company">Advisors Asset Management</span>
+                                </div>
+                                <div>
+                                    <span class="dates">Mar 2009 - Mar 2014</span>
+                                    <span class="location">San Diego, CA</span>
+                                </div>
+                                <ul class="tasks">
+                                    <li>Feature development of web sites for financial advisors providing commerce, marketing services, single sign-on and cobranding capabilities</li>
+                                    <li>Lead development of next generation site based on Salesforce platform, integrating with existing systems, practicing test driven development</li>
+                                    <li>Integrated web application within major retail partner site as seamless client experience</li>
+                                    <li>Development of application services tier utilizing WCF web services</li>
+                                    <li>Automated build, deploy, and continuous integration processes for .NET and Salesforce projects</li>
+                                    <li>Introduced client-side development tools for unit testing, CSS compilation, and functional testing</li>
+                                    <li>Proactively engaged team to adopt Agile development practices</li>
+                                </ul>
+                            </li>
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Senior Member, Technical Design Solutions</span>
+                                    <span class="company">Apollo Group</span>                                        
+                                </div>
+                                <div>
+                                    <span class="dates">Oct 2007 - Mar 2009</span>
+                                    <span class="location">San Francisco, CA</span>
+                                </div>
+                                <div>
+                                    <ul class="tasks">
+                                        <li>Managed web production team to implement and support lead generation client/partner accounts</li>
+                                        <li>Directed and implemented transition of over 100 online marketing campaigns from .NET/SQL Server based platform to XSLT/Java/Oracle based platform</li>                                            
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Web Developer/Production Team Lead</span>
+                                    <span class="company">Aptimus, Inc.</span>
+                                </div>
+                                <div>
+                                    <span class="dates">Sep 2005 - Oct 2007</span>
+                                    <span class="location">San Francisco, CA</span>
+                                </div>
+                                <div>
+                                    <ul class="tasks">
+                                        <li>Developed flexible and reusable application components of online lead generation and marketing system</li>
+                                        <li>Restructured data tier with separate transaction/reporting tiers to increase peak traffic capacity</li>                                            
+                                        <li>Designed primary interface for management and reporting of online marketing campaigns</li>
+                                        <li>Created marketing portal web site utilizing custom content management components</li>
+                                        <li>Promoted by Aptimus to lead team of two developers, a designer and data technician</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Junior Software Developer</span>
+                                    <span class="company">Fixed Income Securities, LP</span>
+                                </div>
+                                <div>
+                                    <span class="dates">Feb 2004 - Sep 2005</span>
+                                    <span class="location">San Diego, CA</span>
+                                </div>
+                                <div>
+                                    <ul class="tasks">
+                                        <li>Developed page templates, user controls and development model for reporting and administration tools</li>
+                                        <li>Created complex financial portfolio reports with Active Reports</li> 
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="education">
+                        <h2>Education</h2>   
+                        <p>
+                            <strong>University of California, Berkeley</strong>, 2002<br/>                               
+                            B.S. Engineering Mathematics and Statistics
+                        </p>
+                    </article>
+
+                    <article class="skills">
+                        <h2>Skills</h2>   
+                        <ul class="skills-list">
+                            <li>AWS</li>
+                            <li>CloudFormation</li>
+                            <li>Microservices</li>
+                            <li>C#</li>
+                            <li>SQL</li>
+                            <li>NoSql</li>
+                            <li>RabbitMQ</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>AngularJS</li>
+                            <li>NodeJS</li>
+                            <li>HTTP</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Git</li>
+                            <li>Groovy</li>
+                            <li>Jenkins</li>  
+                            <li>OAuth</li>
+                            <li>Kong</li>
+                            <li>OData</li>
+                            <li>Salesforce</li>
+                        </ul>
+                    </article>
                 </section>
             </div>
         </div>
-        
     </body>
 </html>
