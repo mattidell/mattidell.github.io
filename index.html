@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Resume / Matt Idell</title>
+        <meta charset="UTF--8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <style type="text/css">
+            /* --- General Styles & Resets --- */
+            :root {
+                --primary-color: #2c3e50; /* Dark Blue */
+                --secondary-color: #3498db; /* Bright Blue */
+                --light-gray: #ecf0f1;
+                --text-color: #34495e; /* Dark Gray */
+                --page-bg: #f4f4f4;
+            }
+
+            body {
+                background-color: var(--page-bg);
+                font-family: 'Open Sans', Arial, sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+                color: var(--text-color);
+                padding: 2em;
+                margin: 0;
+            }
+            
+            p {
+                margin: 0 0 1em 0;
+            }
+
+            h1, h2 {
+                font-weight: 600;
+                color: var(--primary-color);
+                margin: 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding-bottom: 0.4em;
+                border-bottom: 2px solid var(--secondary-color);
+                margin-bottom: 0.75em;
+                margin-top: 0.75em;
+            }
+
+            ul {
+                padding-left: 20px;
+            }
+
+            /* --- Main Container --- */
+            .container {
+                max-width: 850px;
+                margin: 0 auto;
+                background-color: #fff;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+                border-radius: 6px;
+                overflow: hidden;
+            }
+            
+            .hresume {
+                padding: 3em 4em;
+            }
+
+            /* --- Header & Contact --- */
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--light-gray);
+                padding-bottom: 1em;
+                margin-bottom: 1em;
+            }
+            
+            .contact-details {
+                text-align: right;
+                font-size: 0.95rem;
+            }
+
+            .contact-details span {
+                display: block;
+                margin-bottom: 0.25em;
+            }
+            
+            .contact-details i {
+                margin-left: 8px;
+                color: var(--secondary-color);
+            }
+
+            /* --- Sections --- */
+            aside {
+                font-style: italic;
+                color: #555;
+                background-color: #f8f9fa;
+                padding: 1em;
+                border-left: 4px solid var(--secondary-color);
+                margin: 1.5em 0;
+                border-radius: 4px;
+            }
+
+            .phase {
+                font-weight: normal;
+                border-left: 1px solid var(--secondary-color);
+                padding: 0.35em 0.75em;
+                margin-top: 0.5em;
+                font-style: normal; /* don't inherit italics from company/location */
+            }
+
+            .phase > div {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.25em;
+            }
+
+            .phase .tasks {
+                margin-top: 0.25em;
+            }
+           
+           /* --- Experience Section --- */
+            .experience-list {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+
+            .experience-item {
+                margin-bottom: 1.25em;
+            }
+
+            .experience-item > div:first-child,
+            .experience-item > div:nth-child(2) {
+                 display: flex;
+                 justify-content: space-between;
+                 flex-wrap: wrap;
+                 margin-bottom: 0.25em;
+            }
+            
+            .title {
+                font-weight: 700;
+                font-size: 1.1rem;
+                color: var(--primary-color);
+            }
+
+            .company, .location, .dates {
+                font-style: italic;
+                color: #555;
+            }
+
+            .dates {
+                font-weight: 600;
+            }
+           
+            .tasks {
+                margin-top: 0.35em;
+            }
+
+            .tasks li {
+                margin-bottom: 0.35em;
+            }
+           
+           /* --- Skills Section --- */
+            .skills-list {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.35em;
+            }
+
+            .skills-list li {
+                background-color: var(--light-gray);
+                color: var(--primary-color);
+                padding: 0.3em 0.6em;
+                border-radius: 12px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+           
+            /* --- Responsive & Print Styles --- */
+            @media (max-width: 768px) {
+                body {
+                    padding: 0;
+                }
+                .hresume {
+                    padding: 1.5em;
+                }
+                header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1em;
+                }
+                .contact-details {
+                    text-align: left;
+                }
+                .contact-details span {
+                    display: inline-block;
+                    margin-right: 1em;
+                }
+                 .contact-details i {
+                    margin-right: 5px;
+                    margin-left: 0;
+                }
+            }
+
+            @media print {
+                @page {
+                    margin: 0.2in;
+                }
+                body, .container {
+                    background-color: #fff;
+                    box-shadow: none;
+                    margin: 0;
+                    padding: 0.15in;
+                    line-height: 1.4;
+                }
+                .container {
+                    border: none;
+                    max-width: none;
+                }
+                header {
+                    align-items: flex-start;
+                }
+                .contact {
+                    flex: 1 1 auto;
+                }
+                .contact-details {
+                    margin-left: auto;
+                    text-align: right;
+                }
+                aside {
+                    display: none;
+                }
+                h2 {
+                    border-bottom: 2px solid #000;
+                }
+                .skills-list li {
+                    background-color: #eee;
+                    border: 1px solid #ccc;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="hresume">
+                <header>
+                    <div class="contact">
+                        <h1>Matt Idell</h1>
+                    </div>
+                    <div class="contact-details">
+                        <span class="email">mattidell@gmail.com<i class="fas fa-envelope"></i></span>
+                        <span class="city">Oceanside, CA<i class="fas fa-map-marker-alt"></i></span>
+                        <span class="phone">424-453-4158<i class="fas fa-phone"></i></span>
+                    </div>
+                </header>
+                <section>
+                    <article class="objective">
+                        <h2>Professional Summary</h2>
+                        <p>Principal Software Engineer with over a decade of experience designing and building scalable, full-stack solutions in high-availability cloud environments. Proficient in AWS microservice and serverless architectures and modern frontend frameworks like React. Proven ability to lead projects, mentor engineers, and drive technical excellence.</p>
+                    </article>
+                    <article class="skills">
+                        <h2>Technical Skills</h2>   
+                        <ul class="skills-list">
+                            <li><strong>Languages:</strong> C#, JavaScript (ES6+), TypeScript, SQL, Groovy</li>
+                            <li><strong>Cloud & DevOps:</strong> AWS (Lambda, ECS, EventBridge, SQS, SNS, etc.), Docker, Jenkins, Git, CI/CD</li>
+                            <li><strong>Frontend:</strong> React, Node.js, HTML5, CSS3</li>
+                            <li><strong>Architecture:</strong> Microservices, Event-Driven Architecture, Serverless, REST, OData</li>
+                        </ul>
+                    </article>
+                    <article class="experience">
+                        <h2>Experience</h2>   
+                        <ul class="experience-list">
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Senior Principal Software Engineer</span>
+                                    <span class="company">Cornerstone</span>
+                                </div>
+                                <div>
+                                    <span class="dates">Mar 2014 - Nov 2025</span>
+                                    <span class="location">Santa Monica (Remote), CA</span>
+                                </div>
+                                 <div class="phase">
+                                    <div>
+                                    <span class="title">Phase 2 – Core Product and Platform Services Development</span>
+                                    <span class="dates">2019 – Present</span>
+                                    </div>
+                                    <ul class="tasks">
+                                        <li><strong>Feature Delivery: </strong>Delivered business-critical full-stack features across multiple product lines, working directly with Product Management to enable new business and reduce user task time by 90%</li>
+                                        <li><strong>Cloud Architecture: </strong>Co-led multiple cloud infrastructure migrations of acquisition products to AWS with continuous deployment through infrastructure-as-code workflows, hardening security across the stack</li>
+                                        <li><strong>Technical Leadership: </strong>Onboarded and mentored full-stack and devops engineers and Transitioned CFS product from offshore vendors to a high-performing internal team, handling hiring, mentorship and onboarding.</li>
+                                        <li><strong>Platform Development: </strong>Contributed to development platform libraries and infrastructure </li>
+                                    </ul>
+                                </div>
+                                <div class="phase">
+                                    <div>
+                                    <span class="title">Phase 1 – CFS Product Technical Lead</span>
+                                    <span class="dates">2014 – 2019</span>
+                                    </div>
+                                    <ul class="tasks">
+                                        <li><strong>Feature Delivery: </strong>Delivered multiple major product releases of Cornerstone for Salesforce, a Salesforce-native app with AWS backend, adapting to multiple major UI paradigm changes</li>
+                                        <li><strong>Cloud Architecture: </strong>Led rebuild of a compromised AWS account with immediate business impact, restoring service within one week</li>
+                                        <li><strong>Technical Leadership: </strong> Joined product as the first internal developer, active in hiring and building team, development and customer support processes</li>
+                                        <li><strong>Platform Development: </strong>Built scalable Data Warehouse API integrations in Salesforce and Slack</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Senior Software Developer</span>
+                                    <span class="company">Advisors Asset Management</span>
+                                </div>
+                                <div>
+                                    <span class="dates">Mar 2009 - Mar 2014</span>
+                                    <span class="location">San Diego, CA</span>
+                                </div>
+                                <ul class="tasks">
+                                    <li>Built and evolved advisor-facing web properties and backend services with commerce, marketing services, SSO, and cobranding.</li>
+                                    <li>Integrated web applications within major retail partner site as seamless client experience</li>
+                                    <li>Introduced CICD processes, client-side development tools for unit testing, CSS compilation, and functional testing</li>
+                                    <li>Drove adoption of Agile development practices and test driven development</li>
+                                </ul>
+                            </li>
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">Application Developer/Production Team Lead</span>
+                                    <span class="company">Apollo Group + Aptimus, Inc.</span>                                        
+                                </div>
+                                <div>
+                                    <span class="dates">Sep 2005 - Mar 2009</span>
+                                    <span class="location">San Francisco, CA</span>
+                                </div>
+                                <div>
+                                    <ul class="tasks">
+                                        <li>Managed web production team to implement and support lead generation client/partner accounts</li>
+                                        <li>Created flexible reusable application components and content management of lead generation system</li>
+                                        <li>Restructured data tier with separate transaction/reporting tiers to increase peak traffic capacity</li>                                            
+                                        <li>Managed team of two developers, a designer and a data engineer</li>                                          
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="education">
+                        <h2>Education</h2>   
+                        <p>
+                            <strong>University of California, Berkeley</strong>, 2002<br/>                               
+                            B.S. Engineering Mathematics and Statistics
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
