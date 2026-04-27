@@ -1,0 +1,19 @@
+{
+  "name": "mattidell-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Resume site generated from JSON via Nunjucks",
+  "scripts": {
+    "build:all": "npm run build:resume:pdf && npm run build:resume:merged:pdf",
+    "build:resume": "node scripts/build-resume.mjs",
+    "build:resume:pdf": "npm run build:resume && node scripts/build-resume-pdf.mjs",
+    "build:resume:merged": "node scripts/build-resume-merged.mjs",
+    "build:resume:merged:pdf": "npm run build:resume:merged && node scripts/build-resume-merged-pdf.mjs"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

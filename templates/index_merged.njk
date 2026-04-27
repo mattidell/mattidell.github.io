@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+    <head>
+        <title>{{ meta.title }}</title>
+        <meta charset="{{ meta.charset }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style type="text/css">
+            /* --- General Styles & Resets --- */
+            :root {
+                --primary-color: #2c3e50; /* Dark Blue */
+                --secondary-color: #3498db; /* Bright Blue */
+                --light-gray: #ecf0f1;
+                --text-color: #34495e; /* Dark Gray */
+                --page-bg: #f4f4f4;
+            }
+
+            body {
+                background-color: var(--page-bg);
+                font-family: 'Open Sans', Arial, sans-serif;
+                font-size: 13px;
+                line-height: 1.5;
+                color: var(--text-color);
+                padding: 2em;
+                margin: 0;
+            }
+
+            p {
+                margin: 0 0 1em 0;
+            }
+
+            h1, h2 {
+                font-weight: 600;
+                color: var(--primary-color);
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 1.05rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding-bottom: 0.4em;
+                border-bottom: 2px solid var(--secondary-color);
+                margin-bottom: 0.75em;
+                margin-top: 0.75em;
+            }
+
+            .objective h2 {
+                margin-top: 0em;
+            }
+
+            ul {
+                padding-left: 20px;
+            }
+
+            /* --- Main Container --- */
+            .container {
+                max-width: 850px;
+                margin: 0 auto;
+                background-color: #fff;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .hresume {
+                padding: 3em 4em;
+            }
+
+            /* --- Header & Contact --- */
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--light-gray);
+                padding-bottom: 0em;
+                margin-bottom: 0em;
+            }
+
+            .contact-details {
+                text-align: right;
+                font-size: 0.85rem;
+            }
+
+            .contact-details span {
+                display: block;
+                margin-bottom: 0.25em;
+            }
+
+            .contact-details i {
+                margin-left: 8px;
+                color: var(--secondary-color);
+            }
+
+            /* --- Sections --- */
+            aside {
+                font-style: italic;
+                color: #555;
+                background-color: #f8f9fa;
+                padding: 1em;
+                margin: 1.5em 0;
+                border-radius: 4px;
+            }
+
+            .phase {
+                font-weight: normal;
+                padding: 0.35em 0.75em;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                font-style: normal; /* don't inherit italics from company/location */
+            }
+
+            .phase > div {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.25em;
+            }
+
+            .phase .tasks {
+                margin-top: 0.25em;
+            }
+
+           /* --- Experience Section --- */
+            .experience-list {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+
+            .experience-item {
+                margin-bottom: 1.25em;
+            }
+
+            .experience-item > div:first-child,
+            .experience-item > div:nth-child(2) {
+                 display: flex;
+                 justify-content: space-between;
+                 flex-wrap: wrap;
+                 margin-bottom: 0.25em;
+            }
+
+            .title {
+                font-weight: 700;
+                font-size: 0.95rem;
+                color: var(--primary-color);
+            }
+
+            .company, .location, .dates {
+                font-style: italic;
+                color: #555;
+            }
+
+            .dates {
+                font-weight: 600;
+            }
+
+            .tasks {
+                margin-top: 0.35em;
+            }
+
+            .tasks li {
+                margin-bottom: 0.35em;
+            }
+
+           /* --- Skills Section --- */
+            .skills-list {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.35em;
+            }
+
+            .skills-list li {
+                background-color: var(--light-gray);
+                color: var(--primary-color);
+                padding: 0.3em 0.6em;
+                border-radius: 12px;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+
+            /* --- Responsive & Print Styles --- */
+            @media (max-width: 768px) {
+                body {
+                    padding: 0;
+                }
+                .hresume {
+                    padding: 1.5em;
+                }
+                header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1em;
+                }
+                .contact-details {
+                    text-align: left;
+                }
+                .contact-details span {
+                    display: inline-block;
+                    margin-right: 1em;
+                }
+                 .contact-details i {
+                    margin-right: 5px;
+                    margin-left: 0;
+                }
+            }
+
+            @media print {
+                @page {
+                    margin: 0.5in;
+                }
+                body, .container {
+                    background-color: #fff;
+                    box-shadow: none;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.4;
+                }
+                .container {
+                    border: none;
+                    max-width: none;
+                    overflow: visible;
+                    border-radius: 0;
+                }
+                .hresume {
+                    padding: 0;
+                }
+                header {
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                    margin-bottom: 1.5em;
+                }
+                .contact {
+                    flex: 1 1 auto;
+                }
+                .contact-details {
+                    align-self: flex-start;
+                    margin-left: auto;
+                    text-align: right;
+                }
+                .contact-details i {
+                    margin-left: 4px;
+                }
+                aside {
+                    display: none;
+                }
+                h2 {
+                    border-bottom: 2px solid var(--secondary-color);
+                }
+                .skills-list li {
+                    background-color: var(--light-gray);
+                    border: 1px solid #d7dde2;
+                }
+                h2 {
+                    break-after: avoid;
+                    page-break-after: avoid;
+                }
+                article,
+                .experience-item,
+                .phase,
+                .tasks {
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+                body {
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="hresume">
+                <header>
+                    <div class="contact">
+                        <h1>{{ contact.name }}</h1>
+                    </div>
+                    <div class="contact-details">
+                        <span class="email">{{ contact.email }}<i class="fas fa-envelope"></i></span>
+                        <span class="city">{{ contact.city }}<i class="fas fa-map-marker-alt"></i></span>
+                        <span class="phone">{{ contact.phone }}<i class="fas fa-phone"></i></span>
+                    </div>
+                </header>
+                <section>
+                    <article class="skills">
+                        <h2>Core Competencies</h2>
+                        <ul class="skills-list">
+                            {% for competency in coreCompetencies %}
+                            <li>{{ competency }}</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    <article class="skills">
+                        <h2>Technical Skills</h2>
+                        <ul class="skills-list">
+                            {% for skill in skills %}
+                            <li><strong>{{ skill.label }}:</strong> {{ skill.text }}</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    <article class="experience">
+                        <h2>Experience</h2>
+                        <ul class="experience-list">
+                            {% for item in experience %}
+                            <li class="experience-item">
+                                <div>
+                                    <span class="title">{{ item.title }}</span>
+                                    <span class="company">{{ item.company }}</span>
+                                </div>
+                                <div>
+                                    <span class="dates">{{ item.dates }}</span>
+                                    <span class="location">{{ item.location }}</span>
+                                </div>
+                                {% if item.phaseBullets %}
+                                <div class="phase">
+                                    <div></div>
+                                    <ul class="tasks">
+                                        {% for bullet in item.phaseBullets %}
+                                        <li>{{ bullet }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endif %}
+                                {% if item.bullets %}
+                                <ul class="tasks">
+                                    {% for bullet in item.bullets %}
+                                    <li>{{ bullet }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    <article class="education">
+                        <h2>Education</h2>
+                        {% for school in education %}
+                        <p>
+                            <strong>{{ school.school }}</strong>, {{ school.year }}<br>
+                            {{ school.degree }}
+                        </p>
+                        {% endfor %}
+                    </article>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
