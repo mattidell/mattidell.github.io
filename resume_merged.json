@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Resume / Matt Idell",
+    "charset": "UTF-8",
+    "lang": "en"
+  },
+  "contact": {
+    "name": "Matt Idell",
+    "email": "mattidell@gmail.com",
+    "city": "Oceanside, CA",
+    "phone": "424-453-4158"
+  },
+  "summary": "Software engineer with 22 years of experience building, scaling, and rescuing systems across the full stack. 11 years at Cornerstone, growing from first in-house engineer on an early-stage product to Principal Engineer on enterprise-wide platform initiatives.",
+  "coreCompetencies": [
+    "Cloud Architecture",
+    "Event-Driven Systems",
+    "Platform Engineering",
+    "DevOps & CI/CD",
+    "API Design",
+    "Security & Compliance",
+    "Full-Stack Development",
+    "System Integration",
+    "Technical Leadership"
+  ],
+  "education": [
+    {
+      "school": "University of California, Berkeley",
+      "year": "2002",
+      "degree": "B.S. Engineering Mathematics and Statistics"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Principal Software Engineer",
+      "company": "Cornerstone (formerly Cornerstone OnDemand)",
+      "dates": "Apr 2014 - Nov 2025",
+      "location": "Santa Monica, CA",
+      "phaseBullets": [
+        "Rebuilt cloud architecture for Grovo's acquired content authoring platform and catalog library, a critical enabler of Cornerstone's Content business scaling from $0 to $75M ARR over 3 years; reduced infrastructure costs 30% via RabbitMQ → SNS/SQS migration and on-demand Lambda conversion",
+        "Designed and shipped a multi-tenant Slack integration for an enterprise LMS (Lambda, SQS, DynamoDB), reducing friction in learning workflows by surfacing transcript search, training launch, and notifications directly inside employees' existing tools",
+        "Worked across C#/.NET services and React/TypeScript front-ends, delivering customer-facing features across multiple product areas",
+        "Mentored and guided engineers across two globally distributed teams",
+        "As technical lead on a 4-person startup-within-Cornerstone, drove Cornerstone for Salesforce from $200k to $6M ARR — owning architecture decisions, leading major platform evolutions, and shipping across the full product lifecycle",
+        "Designed and built C#/.NET API services for Learning Management, Record System, and Reporting",
+        "Founded the engineering function — hired and onboarded the team, established SDLC, test automation, and customer support workflows, creating the operational foundation the product was built on"
+      ]
+    },
+    {
+      "title": "Senior Software Developer",
+      "company": "Advisors Asset Management",
+      "dates": "Mar 2009 - Mar 2014",
+      "location": "San Diego, CA",
+      "bullets": [
+        "Built advisor-facing web applications and services on C#/.NET/MVC — commerce, marketing services, SAML SSO, and co-branded experiences",
+        "Integrated via iframe within a major retail partner's site to deliver a seamless client-facing experience"
+      ]
+    },
+    {
+      "title": "Software Developer / Engineering Manager",
+      "company": "Apollo Education Group",
+      "dates": "Sep 2005 - Feb 2009",
+      "location": "San Francisco, CA",
+      "bullets": [
+        "Joined via acquisition; built lead generation and content management platforms. Managed the team through integration into Apollo"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "label": "AI & LLM",
+      "text": "AI & LLM: Claude, OpenAI Codex · Agentic prototype development/orchestration · LLM API integration"
+    },
+    {
+      "label": "Cloud & Infrastructure",
+      "text": "AWS (Lambda, ECS, EventBridge, SQS, SNS), Docker, Serverless, IaC, CI/CD, Jenkins, Git"
+    },
+    {
+      "label": "Languages",
+      "text": "JavaScript/TypeScript, Python, C#, Java, SQL, Groovy"
+    },
+    {
+      "label": "Architecture",
+      "text": "Microservices, Event-Driven Architecture, REST, OData, Distributed Messaging"
+    },
+    {
+      "label": "Frameworks & Platforms",
+      "text": "React, Node.js, .NET, Salesforce"
+    }
+  ]
+}
